@@ -138,8 +138,166 @@
         <button type="reset" class="btn-clear">清空</button>
         </div>
     </form>
+
+    <!-- 第三部分：表格展示区 -->
+    <section class="table-section">
+      <table class="data-table">
+        <!-- 表头 一个tr就是一行，th是单元格-->
+        <thead>
+          <tr>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>头像</th>
+            <th>职位</th>
+            <th>入职日期</th>
+            <th>最后操作时间</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+
+        <tbody> 
+          <!-- 表格主体 -->
+          <!-- 测试数据 1 -->
+          <tr>
+            <td>刘备</td>
+            <td>男</td>
+            <td><img src="https://img1.baidu.com/it/u=3394417859,3452097152&fm=253&fmt=auto&app=138&f=JPEG?w=200&h=200" alt="刘备"></td>
+            <td>班主任</td>
+            <td>2020-03-15</td>
+            <td>2025-06-04 14:23</td>
+            <td class="action-cell">
+              <button class="btn-edit">编辑</button>
+              <button class="btn-del">删除</button>
+            </td>
+          </tr>
+
+          <!-- 测试数据 2 -->
+          <tr>
+            <td>孙尚香</td>
+            <td>女</td>
+            <td><img src="https://img1.baidu.com/it/u=2580967883,4022654182&fm=253&fmt=auto&app=138&f=JPEG?w=200&h=200" alt="孙尚香"></td>
+            <td>讲师</td>
+            <td>2021-07-20</td>
+            <td>2025-06-03 09:11</td>
+            <td class="action-cell">
+              <button class="btn-edit">编辑</button>
+              <button class="btn-del">删除</button>
+            </td>
+          </tr>
+
+          <!-- 测试数据 3 -->
+          <tr>
+            <td>曹操</td>
+            <td>男</td>
+            <td><img src="https://img1.baidu.com/it/u=3491026942,2172604918&fm=253&fmt=auto&app=138&f=JPEG?w=200&h=200" alt="曹操"></td>
+            <td>学生主管</td>
+            <td>2019-11-01</td>
+            <td>2025-06-04 10:05</td>
+            <td class="action-cell">
+              <button class="btn-edit">编辑</button>
+              <button class="btn-del">删除</button>
+            </td>
+          </tr>
+
+          
+        </tbody>
+      </table>
+    </section>
+
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        padding: 12px 8px;
+        text-align: center;
+      }
+
+      /* 表格区域整体样式 */
+      .table-section {
+        padding: 24px;
+        background: #fff;
+      }
+
+      .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+        text-align: center;
+      }
+
+      .data-table thead {
+        background: #fafafa;
+      }
+
+      .data-table th,
+      .data-table td {
+        padding: 12px 8px;
+        border-bottom: 1px solid #e5e5e5;
+      }
+
+      /* 头像小图 */
+      .data-table img {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        border-radius: 4px;
+      }
+        
+      /* 操作按钮 */
+      .action-cell {
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+      }
+
+      .btn-edit,
+      .btn-del {
+        padding: 5px 12px;
+        font-size: 13px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .btn-edit {
+        background: #0066cc;
+        color: #fff;
+      }
+
+      .btn-del {
+        background: #f2f2f2;
+        color: #333;
+      }
+    </style>
+
+    <!-- 第四部分：页脚版权区域 -->
+    <footer class="footer">
+      <p class="copyright">
+        © 2025 Tlias智能学习辅助系统. All rights reserved.
+      </p>
+    </footer>
+
+    <style>
+      /* 页脚：置底、灰底、文字居中 */
+      .footer {
+        margin-top: 40px;          /* 与上方内容拉开距离 */
+        padding: 20px 0;
+        background: #f5f5f5;
+        text-align: center;
+        font-size: 14px;
+        color: #666;
+        border-top: 1px solid #e5e5e5;
+      }
+
+      .copyright {
+        margin: 0;
+      }
+    </style>
+
     </section>
         <p style="color: #999;">其余区域稍后开发……</p>
     </main>
 </body>
-</html>
+</html>       
