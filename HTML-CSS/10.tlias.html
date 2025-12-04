@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Tlias智能学习辅助系统</title>
+
+  <!-- 让页面默认无白边，方便整体控制 -->
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+  </style>
+
+  <!-- 顶部导航栏样式 -->
+  <style>
+    /* 父容器 整个顶部导航栏：灰底 + 水平两端对齐 */
+    .top-nav {
+      display: flex;    /* 弹性布局 */
+      justify-content: space-between;   /* 两侧对齐 */
+      align-items: center;  /* 垂直居中 */
+      background-color: #e5e5e5;    /* 灰底 */
+      height: 60px; /* 高度 */
+      padding: 0 24px;  /* 内边距 */
+    }
+
+    /* header中的子容器 左侧大标题：加粗 + 放大 */
+    .nav-title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      font-family: "楷体";
+    }
+
+    /* 右侧退出登录链接 */
+    .nav-logout {
+      font-size: 14px;
+      color: #0066cc;
+      text-decoration: none;
+    }
+    .nav-logout:hover { text-decoration: underline; }
+
+    /* 搜索表单整体样式：水平排列，间隔统一 */
+    .search-bar {
+    padding: 20px 24px;
+    background: #fafafa;
+    border-bottom: 1px solid #e5e5e5;
+    }
+    .search-form {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    }
+    .form-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    }
+    .form-item label {
+    white-space: nowrap;
+    font-size: 14px;
+    color: #333;
+    }
+    .form-item input[type="text"],
+    .form-item select {
+    width: 160px;
+    height: 32px;
+    padding: 0 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    }
+    .buttons {
+    margin-left: auto;
+    }
+    .btn-query,
+    .btn-clear {
+    height: 32px;
+    padding: 0 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    }
+    .btn-query {
+    background: #0066cc;
+    color: #fff;
+    }
+    .btn-clear {
+    background: #f2f2f2;
+    color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 顶部导航栏：第一部分 -->
+  <header class="top-nav">
+    <h1 class="nav-title">Tlias智能学习辅助系统</h1>
+    <a class="nav-logout" href="logout.html">退出登录</a>
+  </header>
+
+  <!-- 后续 3 个区域占位，开发时继续往里填 -->
+  <main style="padding: 24px;">
+    <!-- 第二部分、第三部分、第四部分待补充 -->
+    <!-- 第二部分：搜索表单区域 -->
+    <section class="search-bar">
+    <form id="searchForm" class="search-form">
+        <!-- 1. 姓名 -->
+        <div class="form-item">
+        <label for="name">姓名</label>
+        <input type="text" id="name" name="name" placeholder="请输入姓名">
+        </div>
+
+        <!-- 2. 性别 -->
+        <div class="form-item">
+        <label for="gender">性别</label>
+        <select id="gender" name="gender">
+            <option value="">请选择</option>
+            <option value="男">男</option>
+            <option value="女">女</option>
+        </select>
+        </div>
+
+        <!-- 3. 职位 -->
+        <div class="form-item">
+        <label for="position">职位</label>
+        <select id="position" name="position">
+            <option value="">请选择</option>
+            <option value="班主任">班主任</option>
+            <option value="讲师">讲师</option>
+            <option value="学生主管">学生主管</option>
+        </select>
+        </div>
+
+        <!-- 4. 操作按钮 -->
+        <div class="form-item buttons">
+        <button type="submit" class="btn-query">查询</button>
+        <button type="reset" class="btn-clear">清空</button>
+        </div>
+    </form>
+    </section>
+        <p style="color: #999;">其余区域稍后开发……</p>
+    </main>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    form表单：
+        action:属性指定表单提交的目标地址 url
+        method:属性指定表单提交方式
+            get:提交数据时，数据将显示在url后面(默认) 
+            特点：1. 如果表单中包含隐私数据，get方式数据不安全
+                 2. get方式数据量有限制，数据长度不能超过2KB
+            post:提交数据时，数据将不会显示在url后面
+            特点：1. post方式数据安全
+                 2. post方式数据量没有限制
+        Note：表单项要想采集到数据，必须给表单项添加name属性，表示当前表单项的数据，提交给服务器
+    表单项标签：
+        input:表单输入项标签
+        select:下拉列表
+        textarea:多行文本输入（文本域）
+    -->
+    <form action="/save" method="post">
+        姓名：<input type="text" name="username">
+        年龄：<input type="text" name="age">
+        <input type="submit" value="提交"></input>
+    </form>
+</body>
+</html>

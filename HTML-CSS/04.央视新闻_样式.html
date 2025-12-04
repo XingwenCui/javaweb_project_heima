@@ -5,17 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>【新思想引领新征程】推进长江十年禁渔 谱写长江大保护新篇章</title>
     <!-- 方式2：内部样式 -->
-     <!-- <style>
+     <style>
+        /* 优先级依次提高 */
+        /* 1. 元素选择器：*/
         h3{
             color: rgb(88, 84, 84);
         }
         a{
+            text-decoration: none;
             color: rgb(88, 84, 84);
         }
-     </style> -->
+        /* 2. 类选择器： 前边加逗号 */
+        .cls{
+            color: rgb(36, 156, 52);
+            font-size: 12px;
+        }
+        /* 3. id选择器 前边加# */
+        #time{
+            color: rgb(182, 132, 31);
+            font-size: 12px;
+        }
+     </style>
+
 
      <!-- 方式3：外部样式 -->
-    <link rel="stylesheet" href="css/news.css">
+    <!-- <link rel="stylesheet" href="css/news.css"> -->
 </head>
 <body>
     <h3>【新思想引领新征程】推进长江十年禁渔 谱写长江大保护新篇章</h3>
@@ -27,8 +41,10 @@
        _blank:新窗口打开
      -->
      <a href="https://www.cctv.com" target="_blank">央视网</a>
-     <span>2025年4月1日 20:00:00</span>
+     <!-- <span>2025年4月1日 20:00:00</span> -->
     <!-- 方式1： 行内样式 -->
      <!-- <span style="color: rgb(88, 84, 84);">2025年4月1日 20:00:00</span> -->
+    <!-- 类选择器 -->
+     <span class="cls" id="time">2025年4月1日 20:00:00</span>
 </body>
 </html>
