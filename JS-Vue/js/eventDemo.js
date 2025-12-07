@@ -1,4 +1,6 @@
-import { printLog } from "./utils.js";
+import { printLog } from "./utils.js";  
+// 引入自定义工具类
+// import 引入的模块，必须放在最前面
 
 //click: 鼠标点击事件
 document.querySelector('#b2').addEventListener('click', () => {

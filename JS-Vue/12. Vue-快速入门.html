@@ -7,16 +7,21 @@
 </head>
 <body>
   
+  <!-- 创建一个Vue实例 -->
   <div id="app">
-    <h1>{{message}}</h1>
+    <!-- {{}} 插值表达式 -->
+    <h1>{{message}}</h1>  
     <h1>{{count}}</h1>
   </div>
-  
+  <!-- 不在Vue实例中的元素，不会被Vue管理 -->
+  <h1>{{count}}</h1>
 
   <script type="module">
+    // 引入Vue模块，使用ES6模块化语法
     import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
 
     createApp({
+      // 定义方法
       data() {
         return {
           message: 'Hello Vue',

@@ -257,9 +257,11 @@
         </footer>
     </div>
 
+
+    <!-- javascript 鼠标进入/离开事件监听 -->
     <script>
         //通过JS为上述的表格中数据行添加事件监听, 实现鼠标进入后, 背景色#f2e2e2; 鼠标离开后, 背景色需要设置为#fff; (JS新版本的语法)
-        // 1. 获取所有的tr标签
+        // 1. 获取所有的tr标签, 存储到一个变量中
         let trs = document.querySelectorAll('tr');
 
         // 2. 为每一个tr标签添加事件监听
@@ -267,9 +269,9 @@
             trs[i].addEventListener('mouseenter', function(){ // mouseenter 鼠标进入
                 trs[i].style.backgroundColor = '#f2e2e2';
             });
-            
+            // this和trs[i]都是同一个对象，this表示当前正在处理的对象，trs[i]表示当前正在处理的对象
             trs[i].addEventListener('mouseleave', function(){ // mouseleave 鼠标离开
-                trs[i].style.backgroundColor = '#fff';
+                this.style.backgroundColor = '#fff';
             })
         }
     </script>

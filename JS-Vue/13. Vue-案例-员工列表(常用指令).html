@@ -83,7 +83,7 @@
             <h1>Tlias智能学习辅助系统</h1>
             <a href="#">退出登录</a>
         </div>
-        
+        <!-- searchForm: {{searchForm}} -->
         <!-- 搜索表单区域 -->
         <form class="search-form">
             <label for="name">姓名：</label>
@@ -129,32 +129,43 @@
 
             <!-- 表格主体内容 -->
             <tbody>
+                <!-- v-for: 循环遍数组数据 
+                    v-for="(item, index) in items":key: 循环元素的唯一标识符 (不推荐使用index)
+                    希望那个标签展示多次，则用v-for
+                    比如创建表格，只需要用for循环创建表格行
+                -->
                 <tr v-for="(e, index) in empList" :key="e.id">
                     <td>{{index + 1}}</td>
                     <td>{{e.name}}</td>
                     <td>{{e.gender == 1?'男' : '女'}}</td>
 
-                    <!-- 插值表达式是不能出现在标签内部 -->
+                    <!-- 插值表达式是不能出现在标签内部 
+                        v-bind: 绑定属性，可以为标签绑定动态的属性值，如设置href，src，style等 
+                    -->
                     <td><img class="avatar"  v-bind:src="e.image" :alt="e.name"></td>
 
                     <!-- v-if: 控制元素的显示与隐藏 -->
-                    <td>
+                     <!-- 基于条件判断，来控制创建或移除元素节点（条件渲染） -->
+                    <!-- <td>
                         <span v-if="e.job == 1">班主任</span>
                         <span v-else-if="e.job == 2">讲师</span>
                         <span v-else-if="e.job == 3">学工主管</span>
                         <span v-else-if="e.job == 4">教研主管</span>
                         <span v-else-if="e.job == 5">咨询师</span>
                         <span v-else>其他</span>
-                    </td>
+                    </td> -->
 
                     <!-- v-show: 控制元素的显示与隐藏 -->
-                    <!-- <td>
+                     <!-- 基于CSS样式display来控制是否显示元素 
+                      适用于频繁切换的元素，比如显示隐藏的元素，因为切换样式的消耗比创建或移除元素小很多。
+                    -->
+                    <td>
                         <span v-show="e.job == 1">班主任</span>
                         <span v-show="e.job == 2">讲师</span>
                         <span v-show="e.job == 3">学工主管</span>
                         <span v-show="e.job == 4">教研主管</span>
                         <span v-show="e.job == 5">咨询师</span>
-                    </td> -->
+                    </td>
 
                     <td>{{e.entrydate}}</td>
                     <td>{{e.updatetime}}</td>

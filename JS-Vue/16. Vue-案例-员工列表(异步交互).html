@@ -185,24 +185,29 @@
                 gender: '',
                 job: ''
             },
-            empList: []
+            empList: []     //员工列表数据,通过axios请求获取
           }
         },
         //方法
         methods: {
             async search(){
                 // 发送ajax请求，获取数据
+                // 拼接查询字符串，'?'是分割查询字符串的符号
                 // axios.get(`https://web-server.itheima.net/emps/list?name=${this.searchForm.name}&gender=${this.searchForm.gender}&job=${this.searchForm.job}`).then((result) => {
                 //     this.empList = result.data.data;
                 // })
                 // console.log('===========================');
 
+                // 为了代码可维护性和可读性，使用async/await
+                // 1.使用await关键字，等待axios请求完成，这样写可以省掉.then()方法，result会自动接收请求结果
+                // 2.await关键字只能出现在async函数中
                 let result = await axios.get(`https://web-server.itheima.net/emps/list?name=${this.searchForm.name}&gender=${this.searchForm.gender}&job=${this.searchForm.job}`);
                 this.empList = result.data.data;
             },
             clear(){
                 //清空表单项数据
                 this.searchForm = {name:'', gender:'', job:''}
+                //重新查询，这样就会清空之前查询的数据
                 this.search()
             }
         },

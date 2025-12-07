@@ -14,10 +14,12 @@
     <script src="js/axios.js"></script>
     <script>
         //发送GET请求
+        // 简化操作
         document.querySelector('#btnGet').addEventListener('click', () => {
             axios.get('https://mock.apifox.cn/m1/3083103-0-default/emps/list').then((result) => {
                 console.log(result.data);
             });
+            // 先输出下列结果，axios是异步请求，不会等get结果出来后在执行后边的输出
             console.log('==========================');
         })
         
