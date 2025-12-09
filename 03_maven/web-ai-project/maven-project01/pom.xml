@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+<!-- maven的坐标是jar的唯一标识，通过该坐标可以唯一定位资源位置
+   使用坐标来定义项目或引入项目中需要的依赖
+   groupid: 隶属组织名称，通常是域名反写
+   ArtifactId: 定义当前Maven项目名称，通常是模块名称
+   version：当前项目版本号
+        - SNAPSHOT: 快照阶段，功能不稳定
+        - release：功能趋于稳定，当前更新停止，可用于发行版本-->
+    <groupId>org.example</groupId>
+    <artifactId>maven-project01</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>19</maven.compiler.source>
+        <maven.compiler.target>19</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!-- 配置依赖 -->
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>6.1.4</version>
+            <!--排除依赖-->
+            <exclusions>
+                <exclusion>
+                    <groupId>io.micrometer</groupId>
+                    <artifactId>micrometer-observation</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!--jnit-->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.9.1</version>
+        </dependency>
+    </dependencies>
+
+
+</project>
